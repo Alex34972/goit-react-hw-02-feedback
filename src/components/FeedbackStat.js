@@ -14,7 +14,11 @@ class FeedbackCounter extends React.Component {
   feedbackIncrementBad = () => {
     this.setState((prevState) => ({ bad: prevState.bad + 1 }));
   };
+
   render() {
+    const total = this.state.good + this.state.neutral + this.state.bad;
+    const positiv = (this.state.good / total) * 100;
+
     return (
       <div className="feedback">
         <h2 className="heading ">Please leave feedback</h2>
@@ -43,8 +47,8 @@ class FeedbackCounter extends React.Component {
         <p className="title">Good:{this.state.good}</p>
         <p className="title">Neutral:{this.state.neutral}</p>
         <p className="title">Bad:{this.state.bad}</p>
-        <p className="title">Total:</p>
-        <p className="title">Positive feedback:%</p>
+        <p className="title">Total:{total}</p>
+        <p className="title">Positive feedback:{Math.round(positiv)}%</p>
       </div>
     );
   }
