@@ -1,18 +1,30 @@
 import React from "react";
-const FeedbackOptions = ({
-  onIncrementGood,
-  onIncrementNeutral,
-  onIncrementBad,
-}) => {
+import s from "./FeedbackStat.module.css";
+const FeedbackOptions = ({ onLeaveFeedback }) => {
   return (
     <div className="buttons">
-      <button className="Btn" type="button" onClick={onIncrementGood}>
+      <button
+        className={s.Btn}
+        type="button"
+        name="good"
+        onClick={onLeaveFeedback}
+      >
         Good
       </button>
-      <button className="Btn" type="button" onClick={onIncrementNeutral}>
+      <button
+        className={s.Btn}
+        type="button"
+        name="neutral"
+        onClick={onLeaveFeedback}
+      >
         Neutral
       </button>
-      <button className="Btn" type="button" onClick={onIncrementBad}>
+      <button
+        className={s.Btn}
+        type="button"
+        name="bad"
+        onClick={onLeaveFeedback}
+      >
         Bad
       </button>
     </div>
