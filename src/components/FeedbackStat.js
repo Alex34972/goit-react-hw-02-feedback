@@ -32,7 +32,10 @@ class FeedbackCounter extends React.Component {
     return (
       <div className="feedback">
         <Section title="Please leave feedback">
-          <FeedbackOptions onLeaveFeedback={this.feedbackIncrement} />
+          <FeedbackOptions
+            options={["good", "neutral", "bad"]}
+            onLeaveFeedback={this.feedbackIncrement}
+          />
         </Section>
         <Section title="Statistics">
           {total > 0 ? (
