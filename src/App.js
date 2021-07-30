@@ -1,8 +1,8 @@
-import FeedbackStat from "./components/FeedbackStat";
+import FeedbackCounter from "./FeedbackStat";
 function App() {
   return (
     <>
-      <FeedbackStat />
+      <FeedbackCounter />
     </>
   );
 }
